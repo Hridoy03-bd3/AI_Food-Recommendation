@@ -73,7 +73,7 @@ NextMeal_opt = ["Breakfasst", "Dinner", "Lunch"]
 # STREAMLIT INPUTS
 # ------------------------------
 
-Age = st.selectbox("Age", Age_opt)
+Age = st.selectbox("Age ", Age_opt)
 Gender = st.selectbox("Gender", Gender_opt)
 Height = st.selectbox("Height (in feet and inch)", Height_opt)
 Weight = st.selectbox("Weight (kg)", Weight_opt)
@@ -97,7 +97,7 @@ def encode_value(col, value):
     return le.transform([value])[0]
 
 input_data = pd.DataFrame({
-    "Age": [encode_value("Age", Age)],
+    "Age ": [encode_value("Age ", Age)],
     "Gender": [encode_value("Gender", Gender)],
     "Height (in feet and inch)": [encode_value("Height (in feet and inch)", Height)],
     "Weight (kg)": [encode_value("Weight (kg)", Weight)],
@@ -126,3 +126,4 @@ if st.button("🔍 Get Meal Suggestion"):
 
     st.success("🍽 **Recommended Meal:**")
     st.subheader(final_meal)
+
